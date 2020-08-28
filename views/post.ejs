@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+
+<div class="container">
+
+<h3><%=posts.title%></h3>
+<h5><%=posts.author%></h5>
+<p><%=posts.content%></p>
+<div>
+    <img style="width: 100%; height: 400px;" src="data:image/<%=posts.image.contentType%>;base64, 
+    <%=posts.image.data.toString('base64')%>"> 
+   </div>
+</div> 
+
+
+<%- include("partials/footer"); -%>

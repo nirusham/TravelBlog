@@ -1,0 +1,27 @@
+<%- include("partials/header"); -%>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<div style="padding-bottom: 2%; margin-top: 1%;" class="container">
+  <% posts.forEach(function(post){ %>
+
+    <h1><%= post.title %></h1>
+    <h6><%= post.author %></h6>
+    <p>
+      <%=post.content.substring(0, 390) + " ..."%>
+    <a href="/posts/<%= post._id%>">Read More</a>
+  </p>  
+    <div>
+      <img style="width: 100%; height: 400px;" src="data:image/<%=post.image.contentType%>;base64, 
+      <%=post.image.data.toString('base64')%>"> 
+     </div>
+      <% }) %>
+   
+
+  <p> <%=blogStartingContent %> </p>
+
+  
+    
+
+</div>
+
+
+<%- include("partials/footer"); -%>
